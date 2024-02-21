@@ -23,7 +23,7 @@ func getCurrentTime(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	
+	io.WriteString(w, string(json_data))
 }
 
 func main() {}
