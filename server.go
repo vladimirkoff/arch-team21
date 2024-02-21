@@ -17,13 +17,13 @@ func getTime(writer http.ResponseWriter, r *http.Request) {
 	fmt.Printf("time request received\n")
 
 	currentTime := timeJSON{CURRENT_TIME: time.Now().Format(time.RFC3339)}
-	json_data, err := json.Marshal(currentTime)
+	data, err := json.Marshal(currentTime)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	io.WriteString(writer, string(json_data))
+	io.WriteString(writer, string(data))
 }
 
 func main() {
