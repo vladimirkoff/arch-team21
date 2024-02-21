@@ -13,7 +13,7 @@ type timeJSON struct {
 	CURRENT_TIME string `json:"time"`
 }
 
-func getTime(writer http.ResponseWriter, r *http.Request) {
+func getTime(writer http.ResponseWriter, request *http.Request) {
 	fmt.Printf("time request received\n")
 
 	currentTime := timeJSON{CURRENT_TIME: time.Now().Format(time.RFC3339)}
