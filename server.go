@@ -26,4 +26,7 @@ func getCurrentTime(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, string(json_data))
 }
 
-func main() {}
+func main() {
+	http.HandleFunc("/current-time", getCurrentTime)
+	http.ListenAndServe(":8795", nil)
+}
